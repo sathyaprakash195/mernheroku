@@ -25,7 +25,8 @@ li{
   display: inline;
 }
 input{
-  margin: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 button{
@@ -34,5 +35,8 @@ button{
 td,tr,th{
   vertical-align: middle !important;
   text-align: start;
+}
+.z-depth-1{
+  border-radius: 5px;
 }
 

@@ -29,9 +29,8 @@ const Login = () => {
                 if (res.data.token) {
 
                     localStorage.setItem('loggedin', res.data.token);
-                    history.push('/dashboard');
-                    
-                   
+                    handleShow();
+  
                 }
                 else if (res.data == '1') {
                     alert('email verification is pending');
@@ -47,6 +46,7 @@ const Login = () => {
 
     function proceed () {
        
+        history.push('/dashboard');
        
     }
 
@@ -54,11 +54,11 @@ const Login = () => {
         <div className="row justify-content-center">
 
             <div className='col-md-4'>
-                <h1>Login Page</h1>
+               
 
                 <div className="m-2 p-2 z-depth-1">
 
-
+                    <h1 className="mb-4">Login Page</h1>
 
                     <input type="text"
                         className="form-control"

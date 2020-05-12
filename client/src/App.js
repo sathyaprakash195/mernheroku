@@ -24,7 +24,7 @@ class App extends Component {
 
           <Switch>
             
-            <Route path="/" component={Login} exact strict />
+            <Route path="/" component={Dashboard} exact strict />
             <Route path='/login' component={Login} exact />
             <Route path="/register" component={Register} exact />
             <Route path="/userslist" component={Userslist} exact />

@@ -34,10 +34,10 @@ const Register = () => {
         <div className="row justify-content-center">
             
             <div className='col-md-4'>
-                <h1>Register Page</h1>
+                
                 
                 <div className="m-2 p-2 z-depth-1">
-
+                <h1 className="mb-4">Register Page</h1>
                     <input type="text"
                         className="form-control"
                         name="name"
