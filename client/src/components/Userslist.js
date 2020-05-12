@@ -6,9 +6,7 @@ const Userslist = () => {
 
     const [items, setitems] = useState([]);
 
-    useEffect(() => {
-      
-    },[]);
+   
 
   
 
