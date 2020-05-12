@@ -6,9 +6,10 @@ const Userslist = () => {
 
     const [items, setitems] = useState([]);
 
-   
+    useEffect(() => {
+        getusers();
 
-  
+    }, [])
 
     function deleteuser(id) {
         axios.post('/api/user/deleteuserbyid', { id: id }).then(
@@ -17,31 +18,24 @@ const Userslist = () => {
             }
         )
 
+        getusers();
+
     }
 
-    function getdata()
-    {
-       axios.get('/api/user/getusers').then(
-           res=>{
-               if(res.data)
-               console.log(res.data);
-               else
-               alert('failed');
-           }
-       )
-       
+    function getusers() {
+        axios.get('/api/user/getusers').then(
+            res => {
+                console.log(res.data);
+                setitems(res.data);
+
+            }
+        )
     }
-
-
 
 
 
     return (
         <div className="row justify-content-center">
-
-
-
-
             <div className="col-md-7">
                 <table className="table table-bordered table-responsive">
                     <thead>
@@ -54,12 +48,7 @@ const Userslist = () => {
                         </tr>
                     </thead>
 
-
-                   <button onClick={getdata}>get data</button>
-
-
-
-                    {/* <tbody>
+                    <tbody>
                         {items.map((item) =>
                             <tr>
                                 <td>{item.name}</td>
@@ -70,29 +59,27 @@ const Userslist = () => {
 
                                 <td>
                                     {(() => {
-                                        if (item.isVerified)
+                                        if(item.isVerified)
                                             return "Yes";
                                         else
-                                            return "No";
-
+                                           return "No";
+                                        
                                     })()}
 
                                 </td>
 
                                 <td>
                                     <Link to={`/update/${item._id}`}>
-
-                                        <button className="btn btn-danger">Update</button>
-
+                                 
+                                            <button className="btn btn-danger">Update</button>
+                                    
                                     </Link>
 
                                     <button className="btn btn-primary" onClick={() => deleteuser(item._id)}>Delete</button>
                                 </td>
                             </tr>
                         )}
-                    </tbody> */}
-
-
+                    </tbody>
 
 
                 </table>

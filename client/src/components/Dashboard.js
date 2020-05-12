@@ -23,22 +23,6 @@ function Dashboard(props) {
         }
     })
 
-
-    function getdata()
-    {
-       axios.get('/api/user/getusers').then(
-           res=>{
-               if(res.data)
-               console.log(res.data);
-               else
-               alert('failed');
-           }
-       )
-       
-    }
-
-    
-
     return (
         <div className="row justify-content-center">
 
@@ -49,7 +33,7 @@ function Dashboard(props) {
             <img src="https://ksreddys.in/covidstats/images/rlogob.jpg" className="img-fluid"/>
             </div>
             
-            <button onClick={getdata}>get data</button>
+           
 
 
         </div>

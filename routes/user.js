@@ -95,11 +95,7 @@ router.get('/getusers', (req, res) => {
 });
 
 
-router.post('/getusersp', (req, res) => {
 
-  res.send({name:"vasakolla"});
-
-});
 
 router.post('/getuserbyid', (req, res) => {
 
