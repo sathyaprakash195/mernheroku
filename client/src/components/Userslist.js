@@ -23,11 +23,13 @@ const Userslist = () => {
 
     }
 
-    function getusers() {
-        axios.get('/api/user/getusers').then(
+   async function getusers() {
+       await axios.get('/api/user/getusers').then(
             res => {
+
                 console.log(res.data);
                 setitems(res.data);
+                console.log('hiiiiiii');
 
             }
         )
@@ -39,7 +41,7 @@ const Userslist = () => {
         <div className="row justify-content-center">
 
 
-            <button onClick={getusers}>display</button>
+            <button onClick={getusers}>display users</button>
 
             <div className="col-md-7">
                 <table className="table table-bordered table-responsive">
