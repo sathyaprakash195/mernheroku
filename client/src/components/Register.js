@@ -1,12 +1,19 @@
 import React, { Component, useState } from 'react';
 import axios from 'axios';
+import { Route, withRouter, Redirect, useHistory, Router, } from 'react-router-dom';
+
+import { Modal } from 'react-bootstrap';
+
 const Register = () => {
 
+    const history=useHistory();
     const [name, setname] = useState('');
     const [username, setusername] = useState('');
     const [password, setpassword] = useState('');
     const [email, setemail] = useState('');
 
+
+    const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
