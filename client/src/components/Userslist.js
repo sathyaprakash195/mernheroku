@@ -23,13 +23,13 @@ const Userslist = () => {
     }
 
     function getusers() {
-        axios.get('/api/user/getusers').then(
-            res => {
-                console.log(res.data);
-                setitems(res.data);
+        
+        fetch('/api/user/getusers')
+        .then(response => response.json())
+        .then(data => setitems(data));
 
-            }
-        )
+        
+
     }
 
 
