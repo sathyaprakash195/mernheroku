@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
 const PORT=process.env.PORT || 5000;
-
+app.use('/api/user',userroute);
 if (process.env.NODE_ENV === "production") {
   
   app.use('/', express.static("client/build"));
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
 
 
 
-app.use('/api/user',userroute);
+
 
 
 
