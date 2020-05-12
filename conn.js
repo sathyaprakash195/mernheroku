@@ -1,9 +1,4 @@
-
-
-
-
 var mongoose = require('mongoose');
-
 var mongoDB = 'mongodb+srv://sathya:sathyapr123@cluster0-wrqpt.mongodb.net/merncrud?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;

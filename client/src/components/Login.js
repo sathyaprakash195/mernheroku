@@ -43,8 +43,9 @@ const Login = () => {
 
 
     function proceed () {
-        history.push('/dashboard');
         window.location.reload();
+        history.push('/dashboard');
+       
     }
 
     return (
