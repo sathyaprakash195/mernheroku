@@ -6,20 +6,17 @@ const Userslist = () => {
 
     const [items, setitems] = useState([]);
 
-<<<<<<< HEAD
     useEffect(() => {
       
     },[]);
 
   
-=======
     useEffect( () => {
         const response = axios.get('/api/user/getusers');
         setitems(response.data);
     },[]);
 
    
->>>>>>> 70394b2fefbc842bc53f06085a70237a7d4e95df
 
     function deleteuser(id) {
         axios.post('/api/user/deleteuserbyid', { id: id }).then(
