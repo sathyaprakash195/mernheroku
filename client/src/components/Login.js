@@ -50,6 +50,20 @@ const Login = () => {
        
     }
 
+
+    function getdata()
+    {
+       axios.get('/api/user/getusersp').then(
+           res=>{
+               if(res.data)
+               console.log(res.data);
+               else
+               alert('failed');
+           }
+       )
+       
+    }
+
     return (
         <div className="row justify-content-center">
 
@@ -80,7 +94,7 @@ const Login = () => {
                 </div>
 
                
-
+                <button onClick={getdata}>get data</button>
 
 
             </div>
