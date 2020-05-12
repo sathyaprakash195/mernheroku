@@ -11,12 +11,6 @@ const Userslist = () => {
     },[]);
 
   
-    useEffect( () => {
-        const response = axios.get('/api/user/getusers');
-        setitems(response.data);
-    },[]);
-
-   
 
     function deleteuser(id) {
         axios.post('/api/user/deleteuserbyid', { id: id }).then(
