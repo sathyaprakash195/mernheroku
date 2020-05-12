@@ -6,15 +6,17 @@ const Userslist = () => {
 
     const [items, setitems] = useState([]);
 
-    useEffect(
+    useEffect(() => {
+        getuserslist()
+    },[]);
 
-        async () => {
-            const result = await axios('/api/user/getusers');
+    const getuserslist = async () => {
 
-            setitems(result.data);
-        },
+        const response = await axios.get('/api/user/getusers');
 
-     [])
+        setitems(response.data);
+
+    }
 
     function deleteuser(id) {
         axios.post('/api/user/deleteuserbyid', { id: id }).then(
@@ -23,14 +25,11 @@ const Userslist = () => {
             }
         )
 
-        getususers();
+        
 
     }
 
-    async function getususers() {
-        const result = await axios('/api/user/getusers');
-        setitems(result.data);
-    }
+
 
 
 
