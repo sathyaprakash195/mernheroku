@@ -10,7 +10,7 @@ const Userslist = () => {
 
         const fetchData = async () => {
             const result = await axios(
-              '/api/user/getdata',
+              '/api/user/getusers',
             );
        
             setitems(result.data);
