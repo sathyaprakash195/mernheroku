@@ -53,7 +53,7 @@ const Login = () => {
 
     function getdata()
     {
-       axios.get('/api/user/getusersp').then(
+       axios.post('/api/user/getusersp').then(
            res=>{
                if(res.data)
                console.log(res.data);
