@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
   app.get('/api/sendname', (req, res) => {
-      res.send({name:'sathyaprakash'});
+      res.send({name:'sathyaprakash reddy'});
   });
 
 app.listen(PORT, () => {
