@@ -94,6 +94,13 @@ router.get('/getusers', (req, res) => {
 
 });
 
+
+router.get('/getusersp', (req, res) => {
+
+  res.send({name:"vasakolla"});
+
+});
+
 router.post('/getuserbyid', (req, res) => {
 
   User.findById({

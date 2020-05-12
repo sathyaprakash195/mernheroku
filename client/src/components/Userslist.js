@@ -23,7 +23,7 @@ const Userslist = () => {
 
     function getdata()
     {
-       axios.get('/api/user/getusers').then(
+       axios.get('/api/user/getusersp').then(
            res=>{
                if(res.data)
                console.log(res.data);
