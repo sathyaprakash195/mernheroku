@@ -36,7 +36,7 @@ button{
 td,tr,th{
   vertical-align: middle !important;
   text-align: start;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 .z-depth-1{
   border-radius: 5px;
