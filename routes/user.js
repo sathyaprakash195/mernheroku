@@ -48,7 +48,7 @@ router.post('/registeruser', (req, res) => {
               html: '<p>Click <a href="http://localhost:5000/api/user/verifyemail/' + req.body.email + '">this link</a>click here to verify</p>'
             }, error => {
               if (!error) {
-                res.send('Registered successfully please verify your email');
+                res.send('1');
               }
               else {
                 res.send('email verification failed');

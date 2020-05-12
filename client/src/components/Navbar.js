@@ -11,7 +11,6 @@ function Navbar() {
     function logout() {
         localStorage.removeItem('loggedin');
         history.push('/');
-        window.location.reload();
     }
 
 

@@ -7,6 +7,8 @@ const Register = () => {
     const [password, setpassword] = useState('');
     const [email, setemail] = useState('');
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     function registeruser() {
         var user = {
@@ -19,15 +21,27 @@ const Register = () => {
 
         axios.post('/api/user/registeruser', user).then(
             res => {
-                alert(res.data);
-                setname('');
-                setusername('');
-                setpassword('');
-                setemail('');
                 
+                if(res.data=="1")
+                {
+                    handleShow();
+                    setname('');
+                    setusername('');
+                    setpassword('');
+                    setemail('');
+                }
+                else
+                {
+                     alert(res.data);
+                }
+               
             }
         )
 
+    }
+
+    function proceed () {
+       history.push('/login');
     }
 
     return (
@@ -76,6 +90,19 @@ const Register = () => {
 
 
             </div>
+      
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closebutton>
+                    <Modal.Title>Congratulations</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Registration Successfull,Please Verify your email</Modal.Body>
+                <Modal.Footer>
+                    <button className="btn btn-primary" onClick={proceed}>
+                        Click Here To Login
+                   </button>
+                </Modal.Footer>
+            </Modal>
+      
         </div>
 
     )
