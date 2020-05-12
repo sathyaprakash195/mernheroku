@@ -23,11 +23,15 @@ const Userslist = () => {
 
     function getdata()
     {
-        const response = axios.get('/api/user/getusers');
-
-        setitems(response.data);
-
-        console.log(items);
+       axios.get('/api/user/getusers').then(
+           res=>{
+               if(res.data)
+               console.log(res.data);
+               else
+               alert('failed');
+           }
+       )
+       
     }
 
 
