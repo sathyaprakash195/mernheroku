@@ -5,6 +5,7 @@ var cors=require('cors');
 var userroute=require('./routes/user');
 app.use(bodyParser.json());
 var dbconnection=require('./conn')
+const path=require('path');
 app.use(bodyParser.urlencoded({extended: true}));
 
 
