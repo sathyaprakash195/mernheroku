@@ -7,16 +7,10 @@ const Userslist = () => {
     const [items, setitems] = useState([]);
 
     useEffect(() => {
-        getuserslist()
+      
     },[]);
 
-    const getuserslist = async () => {
-
-        const response = await axios.get('/api/user/getusers');
-
-        setitems(response.data);
-
-    }
+  
 
     function deleteuser(id) {
         axios.post('/api/user/deleteuserbyid', { id: id }).then(
@@ -25,8 +19,15 @@ const Userslist = () => {
             }
         )
 
-        
+    }
 
+    function getdata()
+    {
+        const response = axios.get('/api/user/getusers');
+
+        setitems(response.data);
+
+        console.log(items);
     }
 
 
@@ -50,7 +51,13 @@ const Userslist = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+
+
+                   <button onClick={getdata}>get data</button>
+
+
+
+                    {/* <tbody>
                         {items.map((item) =>
                             <tr>
                                 <td>{item.name}</td>
@@ -81,7 +88,7 @@ const Userslist = () => {
                                 </td>
                             </tr>
                         )}
-                    </tbody>
+                    </tbody> */}
 
 
 
