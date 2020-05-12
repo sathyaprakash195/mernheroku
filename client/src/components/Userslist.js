@@ -25,7 +25,7 @@ const Userslist = () => {
     function getusers() {
         
         fetch('/api/user/getusers')
-        .then(response => response.json())
+        .then(response => console.log(response))
         .then(data => setitems(data));
 
         
