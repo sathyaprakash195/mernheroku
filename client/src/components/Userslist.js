@@ -7,6 +7,7 @@ const Userslist = () => {
     const [items, setitems] = useState([]);
 
     useEffect(() => {
+     
         getusers();
 
     }, [])
@@ -23,19 +24,23 @@ const Userslist = () => {
     }
 
     function getusers() {
-        
-        fetch('/api/user/getusers')
-        .then(response => console.log(response))
-        .then(data => setitems(data));
+        axios.get('/api/user/getusers').then(
+            res => {
+                console.log(res.data);
+                setitems(res.data);
 
-        
-
+            }
+        )
     }
 
 
 
     return (
         <div className="row justify-content-center">
+
+
+            <button onClick={getusers}>display</button>
+
             <div className="col-md-7">
                 <table className="table table-bordered table-responsive">
                     <thead>
@@ -48,38 +53,7 @@ const Userslist = () => {
                         </tr>
                     </thead>
 
-                    <tbody>
-                        {items.map((item) =>
-                            <tr>
-                                <td>{item.name}</td>
-                                <td>{item.username}</td>
-                                <td>{item.email}</td>
-
-
-
-                                <td>
-                                    {(() => {
-                                        if(item.isVerified)
-                                            return "Yes";
-                                        else
-                                           return "No";
-                                        
-                                    })()}
-
-                                </td>
-
-                                <td>
-                                    <Link to={`/update/${item._id}`}>
-                                 
-                                            <button className="btn btn-danger">Update</button>
-                                    
-                                    </Link>
-
-                                    <button className="btn btn-primary" onClick={() => deleteuser(item._id)}>Delete</button>
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
+                 
 
 
                 </table>
