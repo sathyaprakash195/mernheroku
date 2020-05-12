@@ -28,9 +28,9 @@ function Dashboard(props) {
 
 
             <div className="col-md-5">
-            <h1>Hii ,{email}</h1>
+            <h1>Namaste ,{email}</h1>
             <h1>Welcome To MernCrud</h1>
-            <img src="https://ksreddys.in/covidstats/images/rlogob.jpg" className="img-fluid"/>
+            <img src="https://ksreddys.in/covidstats/images/rlogo.png" className="img-fluid"/>
             </div>
             
            
