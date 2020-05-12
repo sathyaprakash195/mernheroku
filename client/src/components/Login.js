@@ -30,7 +30,7 @@ const Login = () => {
 
                     localStorage.setItem('loggedin', res.data.token);
                     history.push('/dashboard');
-                    window.location.reload();
+                    
                    
                 }
                 else if (res.data == '1') {
