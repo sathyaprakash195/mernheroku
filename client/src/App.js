@@ -8,7 +8,7 @@ function App() {
   function getresponse () {
      axios.get('api/sendname').then(res=>{
        alert(res.data.name);
-       console.log(res.data);
+       console.log(res.data.name+"hii");
      })
      
   }
