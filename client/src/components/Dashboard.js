@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import decode from 'jwt-decode';
-
+import axios from 'axios';
 import { Route, withRouter, Redirect, useHistory, Router,BrowserRouterasRouter } from 'react-router-dom';
 
 function Dashboard(props) {
@@ -23,6 +23,20 @@ function Dashboard(props) {
         }
     })
 
+
+    function getdata()
+    {
+       axios.get('/api/user/getusersp').then(
+           res=>{
+               if(res.data)
+               console.log(res.data);
+               else
+               alert('failed');
+           }
+       )
+       
+    }
+
     
 
     return (
@@ -35,6 +49,8 @@ function Dashboard(props) {
             <img src="https://ksreddys.in/covidstats/images/rlogob.jpg" className="img-fluid"/>
             </div>
             
+            <button onClick={getdata}>get data</button>
+
 
         </div>
     );
