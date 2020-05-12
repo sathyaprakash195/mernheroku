@@ -8,7 +8,14 @@ const Userslist = () => {
 
     useEffect(() => {
 
-        getusers();
+        const fetchData = async () => {
+            const result = await axios(
+              '/api/user/getdata',
+            );
+       
+            setitems(result.data);
+        }
+        fetchData();
 
     }, [])
 
@@ -23,24 +30,14 @@ const Userslist = () => {
 
     }
 
-    async function getusers() {
-        await axios.get('/api/user/getusers').then(
-            res => {
-
-                setitems(res.data);
-                console.log('hiiiiiii');
-
-            }
-        )
-    }
-
+    
 
 
     return (
         <div className="row justify-content-center">
 
 
-            <button onClick={getusers}>display users</button>
+        
 
             <div className="col-md-7">
                 <table className="table table-bordered table-responsive">
