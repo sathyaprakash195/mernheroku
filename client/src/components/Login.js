@@ -29,8 +29,9 @@ const Login = () => {
                 if (res.data.token) {
 
                     localStorage.setItem('loggedin', res.data.token);
-                    window.location.reload();
                     history.push('/dashboard');
+                    window.location.reload();
+                   
                 }
                 else if (res.data == '1') {
                     alert('email verification is pending');
@@ -55,7 +56,7 @@ const Login = () => {
             <div className='col-md-4'>
                 <h1>Login Page</h1>
 
-                <div className="m-2 p-2">
+                <div className="m-2 p-2 z-depth-1">
 
 
 

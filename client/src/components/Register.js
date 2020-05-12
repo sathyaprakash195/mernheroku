@@ -36,7 +36,7 @@ const Register = () => {
             <div className='col-md-4'>
                 <h1>Register Page</h1>
                 
-                <div className="m-2 p-2">
+                <div className="m-2 p-2 z-depth-1">
 
                     <input type="text"
                         className="form-control"
