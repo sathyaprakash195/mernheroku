@@ -21,7 +21,7 @@ const Userslist = () => {
 
     function getdata()
     {
-       axios.get('/api/user/getusersp').then(
+       axios.get('/api/user/getusers').then(
            res=>{
                if(res.data)
                console.log(res.data);
