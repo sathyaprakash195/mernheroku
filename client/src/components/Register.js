@@ -25,7 +25,7 @@ const Register = () => {
             password: password
 
         }
-
+        
         axios.post('/api/user/registeruser', user).then(
             res => {
                 

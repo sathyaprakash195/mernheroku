@@ -45,7 +45,7 @@ router.post('/registeruser', (req, res) => {
               to: req.body.email,
               subject: "Verify Your Email",
               text: "Click on the below link to verify your email address and get login access",
-              html: '<p>Click <a href="http://localhost:5000/api/user/verifyemail/' + req.body.email + '">this link</a>click here to verify</p>'
+              html: '<p>Click <a href="http://localhost:5000/api/user/verifyemail/' + req.body.email + '"> This Link</a>click here to verify</p>'
             }, error => {
               if (!error) {
                 res.send('1');

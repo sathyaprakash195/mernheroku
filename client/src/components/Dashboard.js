@@ -26,9 +26,16 @@ function Dashboard(props) {
     
 
     return (
-        <div>
+        <div className="row justify-content-center">
+
+
+            <div className="col-md-5">
             <h1>Hii ,{email}</h1>
             <h1>Welcome To MernCrud</h1>
+            <img src="https://ksreddys.in/covidstats/images/rlogob.jpg" className="img-fluid"/>
+            </div>
+            
+
         </div>
     );
 }

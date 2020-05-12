@@ -9,6 +9,7 @@ body {
   
    text-align: center;
   
+   overflow-x: hidden;
 
 }
 
@@ -35,6 +36,7 @@ button{
 td,tr,th{
   vertical-align: middle !important;
   text-align: start;
+  font-weight: 500;
 }
 .z-depth-1{
   border-radius: 5px;
