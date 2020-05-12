@@ -27,8 +27,10 @@ const Login = () => {
         axios.post('/api/user/loginuser', user).then(
             res => {
                 if (res.data.token) {
-                    handleShow();
+
                     localStorage.setItem('loggedin', res.data.token);
+                    window.location.reload();
+                    history.push('/dashboard');
                 }
                 else if (res.data == '1') {
                     alert('email verification is pending');
@@ -43,8 +45,7 @@ const Login = () => {
 
 
     function proceed () {
-        window.location.reload();
-        history.push('/dashboard');
+       
        
     }
 
