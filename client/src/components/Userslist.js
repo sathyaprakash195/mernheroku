@@ -7,7 +7,7 @@ const Userslist = () => {
     const [items, setitems] = useState([]);
 
     useEffect(() => {
-     
+
         getusers();
 
     }, [])
@@ -23,11 +23,10 @@ const Userslist = () => {
 
     }
 
-   async function getusers() {
-       await axios.get('/api/user/getusers').then(
+    async function getusers() {
+        await axios.get('/api/user/getusers').then(
             res => {
 
-                console.log(res.data);
                 setitems(res.data);
                 console.log('hiiiiiii');
 
@@ -54,8 +53,40 @@ const Userslist = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {items.map((item) =>
+                            <tr>
+                                <td>{item.name}</td>
+                                <td>{item.username}</td>
+                                <td>{item.email}</td>
 
-                 
+
+
+                                <td>
+                                    {(() => {
+                                        if (item.isVerified)
+                                            return "Yes";
+                                        else
+                                            return "No";
+
+                                    })()}
+
+                                </td>
+
+                                <td>
+                                    <Link to={`/update/${item._id}`}>
+
+                                        <button className="btn btn-danger">Update</button>
+
+                                    </Link>
+
+                                    <button className="btn btn-primary" onClick={() => deleteuser(item._id)}>Delete</button>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+
+
 
 
                 </table>
