@@ -6,8 +6,8 @@ const Userslist = () => {
 
     const [items, setitems] = useState([]);
 
-    useEffect(async () => {
-        const response = await axios.get('/api/user/getusers');
+    useEffect( () => {
+        const response = axios.get('/api/user/getusers');
         setitems(response.data);
     },[]);
 
