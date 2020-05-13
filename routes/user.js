@@ -4,7 +4,7 @@ const User = require('../models/user');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 var jwt = require('jsonwebtoken');
-var baseUrl= 'https://mernheroku195.herokuapp.com';
+var baseUrl;
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -13,6 +13,14 @@ let transporter = nodemailer.createTransport({
   }
 });
 
+
+if(process.env.NODE_ENV === "production")
+{
+  baseUrl='https://mernheroku195.herokuapp.com';
+}
+else{
+  baseUrl='http://localhost:5000';
+}
 
 
 
