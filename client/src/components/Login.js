@@ -13,10 +13,12 @@ const Login = () => {
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
 
+    const [spinner ,setspinner]=useState('none');
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     function loginuser() {
+        setspinner('inline');
         var user = {
 
             email: email,
@@ -26,6 +28,7 @@ const Login = () => {
 
         axios.post('/api/user/loginuser', user).then(
             res => {
+                setspinner('none');
                 if (res.data.token) {
 
                     localStorage.setItem('loggedin', res.data.token);
@@ -58,6 +61,9 @@ const Login = () => {
 
             <div className='col-md-4'>
                
+            <Spinner animation="border spinner" role="status" style={{display:spinner}}>
+            <span className="sr-only">Loading...</span>
+           </Spinner>
 
                 <div className="m-2 p-2 z-depth-1">
 

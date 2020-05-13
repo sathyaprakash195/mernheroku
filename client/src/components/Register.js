@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import axios from 'axios';
 import { Route, withRouter, Redirect, useHistory, Router, } from 'react-router-dom';
 
-import { Modal } from 'react-bootstrap';
+import { Modal,Spinner } from 'react-bootstrap';
 
 const Register = () => {
 
@@ -11,13 +11,14 @@ const Register = () => {
     const [username, setusername] = useState('');
     const [password, setpassword] = useState('');
     const [email, setemail] = useState('');
-
+    const [spinner ,setspinner]=useState('none');
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     function registeruser() {
+        setspinner('inline');
         var user = {
             name: name,
             username: username,
@@ -28,7 +29,7 @@ const Register = () => {
         
         axios.post('/api/user/registeruser', user).then(
             res => {
-                
+                setspinner('none');
                 if(res.data=="1")
                 {
                     handleShow();
@@ -56,6 +57,9 @@ const Register = () => {
             
             <div className='col-md-4'>
                 
+            <Spinner animation="border spinner" role="status" style={{display:spinner}}>
+            <span className="sr-only">Loading...</span>
+           </Spinner>
                 
                 <div className="m-2 p-2 z-depth-1">
                 <h1 className="mb-4">Register Page</h1>
@@ -98,6 +102,8 @@ const Register = () => {
 
             </div>
       
+           
+
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closebutton>
                     <Modal.Title>Congratulations</Modal.Title>
