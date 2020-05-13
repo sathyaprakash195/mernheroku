@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Route, withRouter, Redirect, useHistory, Router, } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
+import { Modal,Spinner } from 'react-bootstrap';
 
 import axios from 'axios';
 import Dashboard from './Dashboard';
