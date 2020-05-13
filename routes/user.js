@@ -4,7 +4,7 @@ const User = require('../models/user');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 var jwt = require('jsonwebtoken');
-var baseUrl= process.env.BASE_URL || 'http://localhost:3000';
+var baseUrl= process.env.BASE_URL;
 let transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
